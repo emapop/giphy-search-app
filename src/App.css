@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+* {
+  margin:0px;
+  padding:0px;
+  box-sizing:border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background:rgb(255, 255, 255);
+  font-family:"Noto";
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  width:100%;
+  padding:20px;
+  display:flex;
+  justify-content:center;
+  margin: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.header > div input {
+  padding:10px;
+  margin-right: 10px;
+  width:500px;
+  border:none;
+  outline:none;
+  border-bottom:2px solid rgb(15, 14, 14);
+  font-size: 16px;
+  color:rgba(0, 0, 0, 0.75);
+}
+.header > div input:hover {
+  cursor: pointer;
+}
+.header > div button {
+  height:100%;
+  border-radius:0px;
+  border:none;
+  outline:none;
+  padding:10px 10px; 
+  background:#ffffff;
+  color:#000000;
+  font-weight:600;
+  border: 3px solid black;
+  border-radius: 3px;
+  
+}
+.header > div button:hover {
+  background-color: black;
   color: white;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.result {
+  padding:5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.result .list {
+  display:flex;
+  flex-wrap:wrap;
+}
+.result .list .item {
+  margin:10px;
+  height:258px;
+  border:5px solid #aaa;
+}
+img {
+  width: 248px;
+  aspect-ratio: auto 248 / 248;
+  height: 248px;
+}
+.result .list .item img {
+  width:100%;
+}
+.list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-auto-rows: 100px;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+.loading {
+  display:flex;
+  justify-content:center;
+}
+.loading .loader {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:5px solid #fff;
+  border-top:5px solid #111;
+  transform:rotate(0deg);
+  animation:loading 500ms ease-in-out infinite;
+}
+@keyframes loading {
   to {
-    transform: rotate(360deg);
+    transform:rotate(360deg);
   }
+}
+.nav-pagination{
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin: 15px;
+  padding-right: 25px;
+}
+.pagination{
+  display: flex;
+}
+.page-item {
+  list-style:none;
+  margin-right: 7px;
+}
+a {
+  color: black;
+}
+a:hover{
+  color:rgba(0, 0, 0, 0.60);
+}
+a:focus{
+  color:rgba(0, 0, 0, 0.60);
+  text-decoration: none;
 }
