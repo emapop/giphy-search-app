@@ -3,6 +3,7 @@ import Paginate from './Paginate';
 const GIPHY_API = "https://api.giphy.com/v1/gifs/search?api_key=VYmsxlWOIM2Vqxw7gIXcaw4NE1DS0Gxc&q=";
 
 let TheSearch = () => {
+  const [ darkMode, setDarkMode ] = useState(false);
   const [search, setSearch] = useState("");
   const [gifs, setGifs] = useState([]);
   const [loadingState, setLoadingState] = useState(false);
@@ -38,9 +39,24 @@ let TheSearch = () => {
   useEffect(() => {
     // storing input name
     localStorage.setItem("search", JSON.stringify(search));
-  }, [search]);
+    const toggle = document.querySelector('.toggle-inner');
+    const main = document.querySelector('.main');
+    if( darkMode === true ) {
+      main.classList.add('dark-mode')
+      toggle.classList.add('toggle-active')
+    } else {
+      main.classList.remove('dark-mode')
+      toggle.classList.remove('toggle-active')
+    }
+  }, [search, darkMode]);
   return (
-    <div>
+    <div className="main">
+      <div
+        id="toggle"
+        onClick={() => darkMode === false ? setDarkMode(true) : setDarkMode(false)}
+      >
+        <div className="toggle-inner"/>
+      </div>
       <div className="header">
         <div>
           <input 
@@ -56,6 +72,9 @@ let TheSearch = () => {
       </div>
       <Paginate pageSelected = {pageSelected} currentPage = {currentPage} itemsPerPage={itemsPerPage} totalItems={gifs.length}/>
       <div className="result">
+        {(!search) ? (<div className="message message-for-searching">
+            <p>Click the search bar and type some gifs names you want to see...</p>
+        </div>) : (<></>)}
         {
           (loadingState) ? (
             <div className="loading">

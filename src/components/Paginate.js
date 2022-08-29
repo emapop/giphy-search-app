@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 const Paginate = (props) => {
     const pageNumbers = [];
@@ -11,7 +11,7 @@ const Paginate = (props) => {
             {pageNumbers.map((number, index) => {
                 return (
                     <li key={index} className="page-item">
-                        <a onClick = {()=> props.pageSelected(number)} href="!#" className="page-link">{number}</a>
+                        <a onClick = {()=> props.pageSelected(number)}href="#" className="page-link">{number}</a>
                     </li>
                 )
             })}

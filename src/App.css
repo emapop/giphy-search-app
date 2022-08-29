@@ -7,6 +7,35 @@ body {
   background:rgb(255, 255, 255);
   font-family:"Noto";
 }
+.main {
+  padding: 20px 10px;
+}
+#toggle {
+  width: 50px;
+  display: flex;
+  padding: 5px;
+  margin: 0px 0px 20px 40px;
+  background-color: #1a202c;
+  display: flex;
+  border-radius: 1000px;
+  cursor: pointer;
+  box-shadow: 0px 5px 20px -10px #000000;
+  transition: background-color 0.2s ease-in;
+}
+.toggle-inner {
+  width: 20px;
+  height: 15px;
+  background-color: white;
+  border-radius: 1000px;
+  transition: margin-left 0.2s ease-in, background-color 0.2s ease-in;
+}
+.toggle-active {
+  margin-left: 20px;
+}
+.dark-mode {
+  color: white;
+  background-color: #263554;
+}
 .header {
   width:100%;
   padding:20px;
@@ -45,6 +74,13 @@ body {
   color: white;
   cursor: pointer;
 }
+.message {
+  width:100%;
+  padding:20px;
+  display:flex;
+  justify-content: center;
+  margin: auto;
+}
 .result {
   padding:5px;
 }
@@ -55,7 +91,7 @@ body {
 .result .list .item {
   margin:10px;
   height:258px;
-  border:5px solid #aaa;
+  border:5px solid rgb(178, 174, 174);
 }
 img {
   width: 248px;
@@ -80,7 +116,7 @@ img {
   width:50px;
   height:50px;
   border-radius:50%;
-  border:5px solid #fff;
+  border:5px solid rgb(12, 12, 12);
   border-top:5px solid #111;
   transform:rotate(0deg);
   animation:loading 500ms ease-in-out infinite;
@@ -100,17 +136,17 @@ img {
 .pagination{
   display: flex;
 }
-.page-item {
+li {
   list-style:none;
   margin-right: 7px;
 }
 a {
-  color: black;
+  color: rgb(241, 141, 101);
 }
 a:hover{
-  color:rgba(0, 0, 0, 0.60);
+  color:rgba(0, 0, 0, 0.795);
 }
 a:focus{
-  color:rgba(0, 0, 0, 0.60);
+  color:rgba(0, 0, 0, 0.50);
   text-decoration: none;
 }
