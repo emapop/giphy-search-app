@@ -4,7 +4,12 @@ const GIPHY_API = "https://api.giphy.com/v1/gifs/search?api_key=VYmsxlWOIM2Vqxw7
 
 let TheSearch = () => {
   const [ darkMode, setDarkMode ] = useState(false);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("", () => {
+    // getting stored value
+    const saved = localStorage.getItem("search");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
   const [gifs, setGifs] = useState([]);
   const [loadingState, setLoadingState] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -73,7 +78,7 @@ let TheSearch = () => {
       <Paginate pageSelected = {pageSelected} currentPage = {currentPage} itemsPerPage={itemsPerPage} totalItems={gifs.length}/>
       <div className="result">
         {(!search) ? (<div className="message message-for-searching">
-            <p>Click the search bar and type some gifs names you want to see...</p>
+            <p>Click the search bar and type some gifs names you want to see...🌟</p>
         </div>) : (<></>)}
         {
           (loadingState) ? (
@@ -87,7 +92,7 @@ let TheSearch = () => {
                 currentItems.map((gif)=>{
                   return (
                     <div key={gif.id} className="item">
-                      <img src={gif}/>  
+                      <img src={gif} alt="gif"/>  
                     </div>
                   )
                 })
