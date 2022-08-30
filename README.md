@@ -9,6 +9,11 @@ I have implemented on it:\
 -Mobile Responsivness for phones, tablets, laptops\
 -The Ability to store the search in Local Storage.
 
+#The aspect of the site
+
+There are some images of the web app in the ./public folder showing\
+responsivness both on phone and on bigger screens.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
