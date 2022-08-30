@@ -5,7 +5,7 @@ the goal was to show only 10 giphs per page \
 I have implemented a Dark Theme on it:\
 Responsive Design\
 Mobile Responsivness\
-The Ability to store the search in Local Storage.\
+The Ability to store the search in Local Storage.
 
 # Getting Started with Create React App
 
