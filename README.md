@@ -3,6 +3,7 @@ This is an app that consumes the giphy api and retrieves giphs\
 It got pagination, which is generated automatically,\
 the goal was to show only 10 giphs per page \
 I have implemented on it:\
+-Pagination\
 -A Dark Theme\
 -Responsive Design\
 -Mobile Responsivness for phones, tablets, laptops\
