@@ -2,10 +2,11 @@
 This is an app that consumes the giphy api and retrieves giphs\
 It got pagination, which is generated automatically,\
 the goal was to show only 10 giphs per page \
-I have implemented a Dark Theme on it:\
-Responsive Design\
-Mobile Responsivness\
-The Ability to store the search in Local Storage.
+I have implemented on it:\
+-A Dark Theme
+-Responsive Design\
+-Mobile Responsivness for phones, tablets, laptops\
+-The Ability to store the search in Local Storage.
 
 # Getting Started with Create React App
 
