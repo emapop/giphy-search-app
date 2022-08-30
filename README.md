@@ -1,3 +1,14 @@
+# Giphy Search App
+This is an app that consumes the giphy api and retrieves giphs\
+It got pagination, which is generated automatically,\
+the goal was to show only 10 giphs per page \
+I have implemented on it:\
+-Pagination\
+-A Dark Theme\
+-Responsive Design\
+-Mobile Responsivness for phones, tablets, laptops\
+-The Ability to store the search in Local Storage.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
