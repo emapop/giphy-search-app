@@ -16,8 +16,18 @@ let TheSearch = () => {
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = gifs.slice(indexOfFirstItem, indexOfLastItem)
-  
+  const currentItems = gifs.slice(indexOfFirstItem, indexOfLastItem);
+  const [items, setItems] = useState([]);
+
+useEffect(() => {
+  localStorage.setItem('search', JSON.stringify(search));
+  const items = JSON.parse(localStorage.getItem('search'));
+  console.log(items)
+  if (items) {
+    setItems(items);
+   }
+}, [search, items]);
+ 
   let searchGif = () => {
     if(search.length > 0){
       setLoadingState(true);
@@ -27,7 +37,6 @@ let TheSearch = () => {
         return res.json();
       })
       .then((result)=>{
-        console.log(result);
         setGifs(result.data.map((gif)=>{
           return gif.images.fixed_height.url;
         }))
@@ -42,8 +51,6 @@ let TheSearch = () => {
     setCurrentPage(pageNumber);
   }
   useEffect(() => {
-    // storing input name
-    localStorage.setItem("search", JSON.stringify(search));
     const toggle = document.querySelector('.toggle-inner');
     const main = document.querySelector('.main');
     if( darkMode === true ) {
@@ -53,7 +60,7 @@ let TheSearch = () => {
       main.classList.remove('dark-mode')
       toggle.classList.remove('toggle-active')
     }
-  }, [search, darkMode]);
+  }, [darkMode]);
   return (
     <div className="main">
       <div

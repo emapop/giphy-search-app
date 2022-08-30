@@ -75,7 +75,7 @@ body {
 .header > div input {
   padding:10px;
   margin-right: 10px;
-  width:500px;
+  width:700px;
   border:none;
   outline:none;
   border-bottom:2px solid rgb(15, 14, 14);
@@ -87,6 +87,7 @@ body {
 }
 .header > div button {
   height:100%;
+  width: 100px;
   border-radius:0px;
   border:none;
   outline:none;
@@ -120,13 +121,14 @@ body {
 }
 .result .list .item {
   margin:10px;
-  height:258px;
+  height:288px;
   border:5px solid rgb(178, 174, 174);
+  border-radius: 1.5px;
 }
 img {
-  width: 248px;
-  aspect-ratio: auto 248 / 248;
-  height: 248px;
+  width: 278px;
+  aspect-ratio: auto 278 / 278;
+  height: 278px;
 }
 .result .list .item img {
   width:100%;
@@ -137,6 +139,7 @@ img {
   grid-auto-rows: 100px;
   justify-content: center;
   gap: 2rem 1rem;
+  margin: 10px 5px;
 }
 .loading {
   display:flex;
@@ -155,6 +158,102 @@ img {
   to {
     transform:rotate(360deg);
   }
+}
+@media (max-width: 320px) {
+  .result .list .item {
+    margin:10px;
+    height:120px;
+    border:5px solid rgb(178, 174, 174);
+  }
+  img {
+    width: 110px;
+    height: 110px;
+  }
+  .dark-mode {
+    color: white;
+    background-color: #1a202c;
+
+  
+      .toggle-inner {
+        background-color: #161a20;
+      }
+}
+.header{
+  padding: 10px;
+}
+.header > div input {
+  width:110px;
+}
+.header > div button {
+ width:70px;  
+}
+.list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 50px);
+  grid-auto-rows: 50px;
+  justify-content: center;
+  gap: 5px 5px;
+}
+
+}
+
+@media (min-width: 321px) and (max-width: 700px) {
+  .result .list .item {
+    margin:10px;
+    height:140px;
+    border:5px solid rgb(178, 174, 174);
+  }
+  img {
+    width: 130px;
+    height: 130px;
+  }
+  .dark-mode {
+    color: white;
+    background-color: #1a202c;
+
+  
+      .toggle-inner {
+        background-color: #161a20;
+      }
+}
+.header > div input {
+  width:170px;
+}
+.header > div button {
+ width:90px;
+  
+}
+.list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 50px);
+  grid-auto-rows: 50px;
+  justify-content: center;
+  gap: 5px 5px;
+}
+}
+@media (min-width:700px) and (max-width:1025px) {
+  .result .list .item {
+    margin:10px;
+    height:230px;
+    border:5px solid rgb(178, 174, 174);
+  }
+  img {
+    width: 220px;
+    height: 220px;
+  }
+  .dark-mode {
+    color: white;
+      .toggle-inner {
+        background-color: #161a20;
+      }
+}
+.header > div input {
+  width:400px;
+}
+.header > div button {
+ width:200px;
+  
+}
 }
 .nav-pagination{
   display: flex;
