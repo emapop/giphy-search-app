@@ -3,9 +3,9 @@ import './App.scss';
 import TheSearch from './components/TheSearch';
 function App() {
   return (
-    <div>
+    <>
       <TheSearch/>
-    </div>
+    </>
   );
 }
 
