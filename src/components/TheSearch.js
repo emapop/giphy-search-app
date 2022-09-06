@@ -53,12 +53,15 @@ useEffect(() => {
   useEffect(() => {
     const toggle = document.querySelector('.toggle-inner');
     const main = document.querySelector('.main');
+    const body = document.querySelector('body');
     if( darkMode === true ) {
-      main.classList.add('dark-mode')
-      toggle.classList.add('toggle-active')
+      main.classList.add('dark-mode');
+      body.classList.add('dark-mode');
+      toggle.classList.add('toggle-active');
     } else {
-      main.classList.remove('dark-mode')
-      toggle.classList.remove('toggle-active')
+      body.classList.remove('dark-mode')
+      main.classList.remove('dark-mode');
+      toggle.classList.remove('toggle-active');
     }
   }, [darkMode]);
   return (

@@ -10,6 +10,9 @@ $element-foreground: #ffffff;
   box-sizing:border-box;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+#root{
+  height: 100%;
+}
 html {
   height: 100vh;
 }
@@ -19,7 +22,9 @@ body {
 }
 .main {
   padding:20px 10px;
-  background-size: 100% auto;
+  height: 100%;
+  background: $light-background-color;
+  color: $light-foreground-color;
 }
 #toggle {
   width:50px;
@@ -47,7 +52,19 @@ body {
 .dark-mode {
   color:$dark-foreground-color;
   background-color: $dark-background-color;
-  
+  body {
+    background: rgb(26, 24, 24);
+    color:$dark-foreground-color;
+    height: 100%;
+  }
+  html {
+    background-color: $dark-background-color;
+    height: 100%;
+  }
+  main{
+    background-color: $dark-background-color;
+    height: 100%;
+  }
   a {
     color:rgb(205, 197, 197)
   }
@@ -94,7 +111,7 @@ body {
 .header > div input {
   padding:10px;
   margin-right:10px;
-  width:700px;
+  width:600px;
   border:none;
   outline:none;
   border-bottom:2px solid rgb(15, 14, 14);
@@ -141,14 +158,13 @@ body {
 }
 .result .list .item {
   margin:10px;
-  height:288px;
+  height:318px;
   border:5px solid rgb(178, 174, 174);
   border-radius: 1.5px;
 }
 img {
-  width:278px;
-  aspect-ratio:auto 278 / 278;
-  height:278px;
+  width:308px;
+  height:308px;
 }
 .result .list .item img {
   width:100%;
@@ -250,7 +266,7 @@ img {
   gap:5px 5px;
 }
 }
-@media (min-width:700px) and (max-width:1024px) {
+/* @media (min-width:700px) and (max-width: 1024px) {
   .result .list .item {
     margin:10px;
     height:230px;
@@ -273,7 +289,8 @@ img {
  width:200px;
   
 }
-}
+} */
+
 .nav-pagination{
   display:flex;
   justify-content:end;
