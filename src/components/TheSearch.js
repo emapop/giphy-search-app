@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import Paginate from './Paginate';
 const GIPHY_API = "https://api.giphy.com/v1/gifs/search?api_key=VYmsxlWOIM2Vqxw7gIXcaw4NE1DS0Gxc&q=";
 
@@ -6,7 +6,7 @@ let TheSearch = () => {
   const [ darkMode, setDarkMode ] = useState(false);
   const [search, setSearch] = useState("", () => {
     // getting stored value
-    const saved = localStorage.getItem("search");
+    const saved = localStorage.getItem(currentSearch);
     const initialValue = JSON.parse(saved);
     return initialValue || "";
   });
@@ -18,21 +18,23 @@ let TheSearch = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = gifs.slice(indexOfFirstItem, indexOfLastItem);
   const [items, setItems] = useState([]);
+  const [currentSearch, setCurrent] = useState(GIPHY_API+search);
+  console.log(currentSearch);
 
 useEffect(() => {
-  localStorage.setItem('search', JSON.stringify(search));
+  localStorage.setItem(currentSearch, JSON.stringify(search));
   const items = JSON.parse(localStorage.getItem('search'));
-  console.log(items)
   if (items) {
     setItems(items);
    }
 }, [search, items]);
  
-  let searchGif = () => {
+  let searchGif = useCallback( () => {
     if(search.length > 0){
       setLoadingState(true);
-      fetch(GIPHY_API+search)
+      fetch(currentSearch)
       .then((res)=>{
+        setCurrent(currentSearch)
         setLoadingState(false);
         return res.json();
       })
@@ -46,7 +48,7 @@ useEffect(() => {
         setLoadingState(false);
       })
     }
-  }
+  }, [currentSearch, loadingState])
   const pageSelected = (pageNumber) => {
     setCurrentPage(pageNumber);
   }
