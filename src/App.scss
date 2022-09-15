@@ -1,28 +1,26 @@
-@use "sass:color";
 /*setting the saas color variables*/
 $dark-background-color: #1a202c;
 $dark-foreground-color: #cfcfcf;
 $light-background-color: #eee;
 $light-foreground-color: #1d1d25;
 $element-foreground: #ffffff;
+$font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+  "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: $font-family;
 }
 
 #root {
   height: 100%;
 }
 
-html {
-  height: 100vh;
-}
-
 body {
-  background: $light-background-color;
+  background-color: $light-background-color;
   color: $light-foreground-color;
 }
 
@@ -39,7 +37,6 @@ body {
   padding: 5px;
   margin: 0px 0px 20px 40px;
   background-color: #1a202c;
-  display: flex;
   border-radius: 1000px;
   cursor: pointer;
   box-shadow: 0px 5px 20px -10px #000000;
@@ -63,27 +60,20 @@ body {
   background-color: $dark-background-color;
 
   body {
-    background: rgb(26, 24, 24);
-    color: $dark-foreground-color;
-    height: 100%;
-  }
-
-  html {
     background-color: $dark-background-color;
-    height: 100%;
+    color: $dark-foreground-color;
   }
 
   main {
     background-color: $dark-background-color;
-    height: 100%;
   }
 
   a {
-    color: rgb(205, 197, 197)
-  }
+    color: $dark-foreground-color;
 
-  a:hover {
-    color: rgb(252, 244, 244);
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
   }
 
   #toggle {
@@ -94,15 +84,15 @@ body {
     }
   }
 
-  .header>div input {
+  .header > div input {
     border-radius: 15px;
   }
 
-  .header>div button {
+  .header > div button {
     border-radius: 9px;
   }
 
-  .header>div button:hover {
+  .header > div button:hover {
     background-color: rgb(182, 177, 177);
   }
 
@@ -129,23 +119,23 @@ body {
   margin: auto;
 }
 
-.header>div input {
+.header > div input {
   padding: 10px;
   margin-right: 10px;
   width: 600px;
   border: none;
   outline: none;
   border-bottom: 2px solid rgb(15, 14, 14);
-  font-size: 16px;
+  font-size: 1rem;
   background: rgb(245, 239, 239);
   color: rgba(0, 0, 0, 0.75);
 }
 
-.header>div input:hover {
+.header > div input:hover {
   cursor: pointer;
 }
 
-.header>div button {
+.header > div button {
   height: 100%;
   width: 100px;
   border-radius: 0px;
@@ -157,10 +147,9 @@ body {
   font-weight: 600;
   border: 3px solid black;
   border-radius: 3px;
-
 }
 
-.header>div button:hover {
+.header > div button:hover {
   background-color: black;
   color: $element-foreground;
   cursor: pointer;
@@ -172,7 +161,7 @@ body {
   display: flex;
   justify-content: center;
   margin: auto;
-  font-size: 18px;
+  font-size: 1.25rem;
 }
 
 .result {
@@ -186,14 +175,14 @@ body {
 
 .result .list .item {
   margin: 10px;
-  height: 318px;
+  height: 320px;
   border: 5px solid rgb(178, 174, 174);
   border-radius: 1.5px;
 }
 
 img {
-  width: 308px;
-  height: 308px;
+  width: 310px;
+  height: 310px;
 }
 
 .result .list .item img {
@@ -229,6 +218,7 @@ img {
     transform: rotate(360deg);
   }
 }
+
 /*media queries for mobile responsivness, this particular media query sets the width and height of the image at 190px
 and sets the search bar and the button to a smaller width*/
 @media (max-width: 320px) {
@@ -242,15 +232,16 @@ and sets the search bar and the button to a smaller width*/
     width: 190px;
     height: 190px;
   }
+
   .header {
     padding: 10px;
   }
 
-  .header>div input {
+  .header > div input {
     width: 110px;
   }
 
-  .header>div button {
+  .header > div button {
     width: 70px;
   }
 
@@ -261,8 +252,8 @@ and sets the search bar and the button to a smaller width*/
     justify-content: center;
     gap: 5px 5px;
   }
-
 }
+
 /*this media sets the images at a height and witdth of 220px 
 it also sets the input search at a width of 170px and the search button at a width of 90px*/
 @media (min-width: 321px) and (max-width: 790px) {
@@ -277,13 +268,12 @@ it also sets the input search at a width of 170px and the search button at a wid
     height: 220px;
   }
 
-  .header>div input {
+  .header > div input {
     width: 170px;
   }
 
-  .header>div button {
+  .header > div button {
     width: 90px;
-
   }
 
   .list {
@@ -296,12 +286,12 @@ it also sets the input search at a width of 170px and the search button at a wid
 }
 
 // this media sets the input search at a width of 400px and the search button at a width of 200px
-@media (min-width:700px) and (max-width: 1024px) {
-  .header>div input {
+@media (min-width: 700px) and (max-width: 1024px) {
+  .header > div input {
     width: 400px;
   }
 
-  .header>div button {
+  .header > div button {
     width: 200px;
   }
 }
@@ -318,20 +308,20 @@ it also sets the input search at a width of 170px and the search button at a wid
   display: flex;
 }
 
-.pagination>li {
+.pagination > li {
   list-style: none;
   margin-right: 7px;
 }
 
-.page-item>a {
+.page-item > a {
   color: rgb(241, 141, 101);
 }
 
-.page-item>a:hover {
+.page-item > a:hover {
   color: rgba(0, 0, 0, 0.795);
 }
 
-.page-item>a:focus {
-  color: rgba(0, 0, 0, 0.60);
+.page-item > a:focus {
+  color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
 }

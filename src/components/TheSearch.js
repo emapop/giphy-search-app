@@ -22,8 +22,9 @@ let TheSearch = () => {
   //currentItems return an array copy with gifs that have the first index returned as the indexOfFirstItem and the last index as idexOfLastItem
   const currentItems = gifs.slice(indexOfFirstItem, indexOfLastItem);
   const [items, setItems] = useState([]);
+  // currentSearch is the actual search value bind with the api url and used for setting the local storage key
   const [currentSearch, setCurrent] = useState(GIPHY_API + search);
-  console.log(currentSearch);
+  console.debug(currentSearch);
   // this useEffect callback sets the local storage by extracting the search value and the giphy api which
   //works as a key for storing searches in local storage
   useEffect(() => {
@@ -45,7 +46,7 @@ let TheSearch = () => {
           return res.json();
         })
         .then((result) => {
-          console.log(result);
+          console.debug(result);
           setGifs(
             result.data.map((gif) => {
               return gif.images.fixed_height.url;
@@ -82,7 +83,7 @@ let TheSearch = () => {
         id="toggle"
         //when the toggle button is pressed the dark mode is activated
         onClick={() =>
-          darkMode === false ? setDarkMode(true) : setDarkMode(false)
+         darkMode === false ? setDarkMode(true) : setDarkMode(false)
         }
       >
         <div className="toggle-inner" />
@@ -113,7 +114,7 @@ let TheSearch = () => {
       />
       <div className="result">
         {!search ? (
-          <div className="message message-for-searching">
+          <div className="message">
             <p>
               Click the search bar and type some gifs names you want to see...🌟
             </p>
