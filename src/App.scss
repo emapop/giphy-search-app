@@ -1,317 +1,337 @@
 @use "sass:color";
+/*setting the saas color variables*/
 $dark-background-color: #1a202c;
 $dark-foreground-color: #cfcfcf;
 $light-background-color: #eee;
 $light-foreground-color: #1d1d25;
 $element-foreground: #ffffff;
+
 * {
-  margin:0px;
-  padding:0px;
-  box-sizing:border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-#root{
+
+#root {
   height: 100%;
 }
+
 html {
   height: 100vh;
 }
+
 body {
   background: $light-background-color;
   color: $light-foreground-color;
 }
+
 .main {
-  padding:20px 10px;
+  padding: 20px 10px;
   height: 100%;
   background: $light-background-color;
   color: $light-foreground-color;
 }
+
 #toggle {
-  width:50px;
-  display:flex;
-  padding:5px;
-  margin:0px 0px 20px 40px;
-  background-color:#1a202c;
-  display:flex;
-  border-radius:1000px;
+  width: 50px;
+  display: flex;
+  padding: 5px;
+  margin: 0px 0px 20px 40px;
+  background-color: #1a202c;
+  display: flex;
+  border-radius: 1000px;
   cursor: pointer;
-  box-shadow:0px 5px 20px -10px #000000;
-  transition:background-color 0.2s ease-in;
+  box-shadow: 0px 5px 20px -10px #000000;
+  transition: background-color 0.2s ease-in;
+
   .toggle-inner {
-    width:20px;
-    height:15px;
-    background-color:$element-foreground;
-    border-radius:1000px;
-    transition:margin-left 0.2s ease-in, background-color 0.2s ease-in;
+    width: 20px;
+    height: 15px;
+    background-color: $element-foreground;
+    border-radius: 1000px;
+    transition: margin-left 0.2s ease-in, background-color 0.2s ease-in;
 
     &.toggle-active {
-      margin-left:20px;
+      margin-left: 20px;
     }
   }
 }
+
 .dark-mode {
-  color:$dark-foreground-color;
+  color: $dark-foreground-color;
   background-color: $dark-background-color;
+
   body {
     background: rgb(26, 24, 24);
-    color:$dark-foreground-color;
+    color: $dark-foreground-color;
     height: 100%;
   }
+
   html {
     background-color: $dark-background-color;
     height: 100%;
   }
-  main{
+
+  main {
     background-color: $dark-background-color;
     height: 100%;
   }
+
   a {
-    color:rgb(205, 197, 197)
+    color: rgb(205, 197, 197)
   }
 
   a:hover {
     color: rgb(252, 244, 244);
   }
-   
+
   #toggle {
-    background-color:$element-foreground;
+    background-color: $element-foreground;
 
     .toggle-inner {
-      background-color:#203254;
+      background-color: #203254;
     }
   }
-  .header > div input{
-    border-radius:15px;
+
+  .header>div input {
+    border-radius: 15px;
   }
-  .header > div button {
-    border-radius:9px;
+
+  .header>div button {
+    border-radius: 9px;
   }
-  .header > div button:hover{
-    background-color:rgb(182, 177, 177);
+
+  .header>div button:hover {
+    background-color: rgb(182, 177, 177);
   }
-  .result .list .item{
+
+  .result .list .item {
     border: 5px solid rgb(214, 205, 205);
   }
-  a:hover{
-    color:rgba(241, 141, 101, 0.5);
+
+  a:hover {
+    color: rgba(241, 141, 101, 0.5);
     text-decoration: none;
   }
-  a:focus{
-    color:rgba(241, 141, 101, 0.5);
+
+  a:focus {
+    color: rgba(241, 141, 101, 0.5);
     text-decoration: none;
   }
 }
+
 .header {
-  width:100%;
-  padding:20px;
-  display:flex;
-  justify-content:center;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
   margin: auto;
 }
-.header > div input {
-  padding:10px;
-  margin-right:10px;
-  width:600px;
-  border:none;
-  outline:none;
-  border-bottom:2px solid rgb(15, 14, 14);
+
+.header>div input {
+  padding: 10px;
+  margin-right: 10px;
+  width: 600px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgb(15, 14, 14);
   font-size: 16px;
-  background:rgb(245, 239, 239);
-  color:rgba(0, 0, 0, 0.75);
+  background: rgb(245, 239, 239);
+  color: rgba(0, 0, 0, 0.75);
 }
-.header > div input:hover {
+
+.header>div input:hover {
   cursor: pointer;
 }
-.header > div button {
-  height:100%;
-  width:100px;
-  border-radius:0px;
-  border:none;
-  outline:none;
-  padding:10px 10px; 
-  background:rgb(245, 241, 241);
-  color:#000000;
-  font-weight:600;
+
+.header>div button {
+  height: 100%;
+  width: 100px;
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  padding: 10px 10px;
+  background: rgb(245, 241, 241);
+  color: #000000;
+  font-weight: 600;
   border: 3px solid black;
   border-radius: 3px;
-  
+
 }
-.header > div button:hover {
-  background-color:black;
-  color:$element-foreground;
-  cursor:pointer;
+
+.header>div button:hover {
+  background-color: black;
+  color: $element-foreground;
+  cursor: pointer;
 }
+
 .message {
-  width:100%;
-  padding:20px;
-  display:flex;
-  justify-content:center;
-  margin:auto;
-  font-size:18px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  font-size: 18px;
 }
+
 .result {
-  padding:5px;
+  padding: 5px;
 }
+
 .result .list {
-  display:flex;
-  flex-wrap:wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
+
 .result .list .item {
-  margin:10px;
-  height:318px;
-  border:5px solid rgb(178, 174, 174);
+  margin: 10px;
+  height: 318px;
+  border: 5px solid rgb(178, 174, 174);
   border-radius: 1.5px;
 }
+
 img {
-  width:308px;
-  height:308px;
+  width: 308px;
+  height: 308px;
 }
+
 .result .list .item img {
-  width:100%;
+  width: 100%;
 }
-.list{
-  display:grid;
+
+.list {
+  display: grid;
   grid-template-columns: repeat(auto-fit, 100px);
-  grid-auto-rows:100px;
-  justify-content:center;
-  gap:2rem 1rem;
-  margin:10px 5px;
+  grid-auto-rows: 100px;
+  justify-content: center;
+  gap: 2rem 1rem;
+  margin: 10px 5px;
 }
+
 .loading {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
+
 .loading .loader {
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  border:5px solid rgb(12, 12, 12);
-  border-top:5px solid #111;
-  transform:rotate(0deg);
-  animation:loading 500ms ease-in-out infinite;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid rgb(12, 12, 12);
+  border-top: 5px solid #111;
+  transform: rotate(0deg);
+  animation: loading 500ms ease-in-out infinite;
 }
+
 @keyframes loading {
   to {
-    transform:rotate(360deg);
+    transform: rotate(360deg);
   }
 }
+/*media queries for mobile responsivness, this particular media query sets the width and height of the image at 190px
+and sets the search bar and the button to a smaller width*/
 @media (max-width: 320px) {
   .result .list .item {
-    margin:10px;
-    height:120px;
-    border:5px solid rgb(178, 174, 174);
+    margin: 10px;
+    height: 200px;
+    border: 5px solid rgb(178, 174, 174);
   }
+
   img {
-    width:110px;
-    height:110px;
+    width: 190px;
+    height: 190px;
   }
-  .dark-mode {
-    color: $element-foreground;
-    background-color: $dark-background-color;
+  .header {
+    padding: 10px;
+  }
 
-      .toggle-inner {
-        background-color: #161a20;
-      }
-}
-.header{
-  padding:10px;
-}
-.header > div input {
-  width:110px;
-}
-.header > div button {
- width:70px;  
-}
-.list{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 50px);
-  grid-auto-rows: 50px;
-  justify-content: center;
-  gap:5px 5px;
-}
+  .header>div input {
+    width: 110px;
+  }
+
+  .header>div button {
+    width: 70px;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50px);
+    grid-auto-rows: 50px;
+    justify-content: center;
+    gap: 5px 5px;
+  }
 
 }
-
+/*this media sets the images at a height and witdth of 220px 
+it also sets the input search at a width of 170px and the search button at a width of 90px*/
 @media (min-width: 321px) and (max-width: 790px) {
   .result .list .item {
-    margin:10px;
-    height:180px;
-    border:5px solid rgb(178, 174, 174);
+    margin: 10px;
+    height: 230px;
+    border: 5px solid rgb(178, 174, 174);
   }
-  img {
-    width:170px;
-    height:170px;
-  }
-  .dark-mode {
-    color: $element-foreground;
-    background-color: $dark-background-color;
 
-  
-      .toggle-inner {
-        background-color: #161a20;
-      }
-}
-.header > div input {
-  width:170px;
-}
-.header > div button {
- width:90px;
-  
-}
-.list{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 50px);
-  grid-auto-rows:50px;
-  justify-content: center;
-  gap:5px 5px;
-}
-}
-/* @media (min-width:700px) and (max-width: 1024px) {
-  .result .list .item {
-    margin:10px;
-    height:230px;
-    border:5px solid rgb(178, 174, 174);
-  }
   img {
-    width:220px;
-    height:220px;
+    width: 220px;
+    height: 220px;
   }
-  .dark-mode {
-    color: $element-foreground;
-      .toggle-inner {
-        background-color: #161a20;
-      }
-}
-.header > div input {
-  width:400px;
-}
-.header > div button {
- width:200px;
-  
-}
-} */
 
-.nav-pagination{
-  display:flex;
-  justify-content:end;
-  align-items:flex-end;
-  margin:15px;
-  padding-right:25px;
+  .header>div input {
+    width: 170px;
+  }
+
+  .header>div button {
+    width: 90px;
+
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 50px);
+    grid-auto-rows: 50px;
+    justify-content: center;
+    gap: 5px 5px;
+  }
 }
-.pagination{
-  display:flex;
+
+// this media sets the input search at a width of 400px and the search button at a width of 200px
+@media (min-width:700px) and (max-width: 1024px) {
+  .header>div input {
+    width: 400px;
+  }
+
+  .header>div button {
+    width: 200px;
+  }
 }
-li {
-  list-style:none;
-  margin-right:7px;
+
+.nav-pagination {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  margin: 15px;
+  padding-right: 25px;
 }
-a {
+
+.pagination {
+  display: flex;
+}
+
+.pagination>li {
+  list-style: none;
+  margin-right: 7px;
+}
+
+.page-item>a {
   color: rgb(241, 141, 101);
 }
-a:hover{
-  color:rgba(0, 0, 0, 0.795);
+
+.page-item>a:hover {
+  color: rgba(0, 0, 0, 0.795);
 }
-a:focus{
-  color:rgba(0, 0, 0, 0.50);
-  text-decoration:none;
+
+.page-item>a:focus {
+  color: rgba(0, 0, 0, 0.60);
+  text-decoration: none;
 }
