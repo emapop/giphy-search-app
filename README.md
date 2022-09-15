@@ -1,18 +1,16 @@
 # Giphy Search App
-This is an app that consumes the giphy api and retrieves giphs\
-It got pagination, which is generated automatically,\
-the goal was to show only 10 giphs per page \
-I have implemented on it:\
--Pagination\
--A Dark Theme\
--Responsive Design\
--Mobile Responsivness for phones, tablets, laptops\
--The Ability to store the search in Local Storage.
+This is an app that consumes the giphy api and retrieves giphs.\
+It hold pagination, which is generated automatically.\
+It containes this general feautures:  \
+-The Ability to store the search in Local Storage  \
+-A Dark Theme \
+-Responsive Design \
+-Mobile Responsivness.\
 
-#The aspect of the site
+#The review of this site
 
-There are some images of the web app in the ./public folder showing\
-responsivness both on phone and on bigger screens.
+There are some images of the web app in ./public folder located in this repo showing\ 
+phone, tablet and bigger screens responsivness also also its dark theme implementation.\\\\
 
 # Getting Started with Create React App
 
