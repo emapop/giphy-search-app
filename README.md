@@ -10,7 +10,7 @@ It containes this general feautures:  \
 #The review of this site
 
 There are some images of the web app in ./public folder located in this repo showing\ 
-phone, tablet and bigger screens responsivness also also its dark theme implementation.\\\\
+phone, tablet and bigger screens responsivness also also its dark theme implementation.
 
 # Getting Started with Create React App
 
