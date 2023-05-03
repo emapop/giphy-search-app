@@ -5,7 +5,7 @@ It containes this general feautures:  \
 -The Ability to store the search in Local Storage  \
 -A Dark Theme \
 -Responsive Design \
--Mobile Responsivness.\
+-Mobile Responsivness.
 
 #The review of this site
 
